@@ -9,7 +9,7 @@ then
 	then
 		if [ -e ~/DBMS/$DBName ]
 		then
-			echo "Database is already exist"
+			echo "Database ($DBName) already exist"
 			while true	
 			do	
 				read -p "Enter a different name: " DBName
@@ -21,7 +21,7 @@ then
 				fi
 				if [ -e ~/DBMS/$DBName ]
 				then
-					echo "Database is already exist"
+					echo "Database ($DBName) already exist"
 				else
 					mkdir ~/DBMS/$DBName
 					echo "Database ($DBName) created successfully"
@@ -33,7 +33,7 @@ then
 			echo "Database ($DBName) created successfully"
 		fi
 	else
-		echo "Invalid name. Must start with letter, no spaces or special characters, and not be too long"		
+		echo "Invalid name. Must start with letter, no special characters, and not be too long"		
 	fi
 else 
 	echo "You did not enter a database name."
