@@ -24,7 +24,7 @@ then
 				 dt_PK=$(head -1 ~/DBMS/$DBNameC/.MetaData$TNameU | cut -d: -f2 )
 				 if { [ "$dt_PK" = "integer" ] && is_number "$PK_value"; } || { [ "$dt_PK" = "string" ] && is_string "$PK_value"; }
 				 then
-					val=$(cut -d: -f1 ~/DBMS/$DBNameC/$TNameU | grep -w $PK_value | wc -l)
+					val=$(cut -d: -f1 ~/DBMS/$DBNameC/$TNameU | grep -w "$PK_value" | wc -l)
 						if [ "$val" -gt 0 ]
 						then
 							PS3="Please Choose Column Name (set column): "
@@ -43,7 +43,7 @@ then
 							    dt=${DataTypes[$REPLY-1]}
 							
 							 if { [ "$dt" = "integer" ] && is_number "$value"; } || { [ "$dt" = "string" ] && is_string "$value"; }; then		
-								val_new=$(cut -d: -f1 ~/DBMS/$DBNameC/$TNameU | grep -w $value | wc -l)
+								val_new=$(cut -d: -f1 ~/DBMS/$DBNameC/$TNameU | grep -w "$value" | wc -l)
 								if [ "$val_new" -eq 0 ]
 								then
 									column_index=$REPLY
@@ -111,7 +111,7 @@ then
 				    		if { [ "$dt_condition" = "integer" ] && is_number "$valuecolcon"; } || { [ "$dt_condition" = "string" ] && is_string "$valuecolcon"; } && { [ "$dt_set" = "integer" ] && is_number "$valuecolset"; } || { [ "$dt_set" = "string" ] && is_string "$valuecolset"; }		    	
 									    			
 				    			then
-							val_new=$(cut -d: -f$columnContion_index ~/DBMS/$DBNameC/$TNameU | grep -w $valuecolcon | wc -l)
+							val_new=$(cut -d: -f$columnContion_index ~/DBMS/$DBNameC/$TNameU | grep -w "$valuecolcon" | wc -l)
 							if [ "$val_new" -gt 0 ]
 							then
 								pk=($(awk -v col="$columnContion_index" -v val="$valuecolcon" -F: '$col == val {print $1}' ~/DBMS/$DBNameC/$TNameU))
