@@ -5,20 +5,20 @@ The DBMS simulates common database operations, including creating and managing d
 
 ## Features
 ### Main Menu:
-- **Create Database**: Create a new database as a directory in the current script file.
-- **List Databases**: List all existing databases stored in the directory.
+- **Create Database**: Set up new databases as directories.
+- **List Databases**: View all existing databases.
 - **Connect to Database**: Connect to a specific database to manage tables within it.
-- **Drop Database**: Delete a database (remove its directory).
+- **Drop Database**: Safely delete a database when it's no longer needed.
 
 ### Database Operations (Upon Connecting to a Database):
 - **Create Table**: Define a new table, including column names, data types, and primary key.
-- **List Tables**: List all tables within the current database.
-- **Drop Table**: Remove an existing table from the database.
+- **List Tables**: List all tables in the connected database.
+- **Drop Table**: Delete tables you no longer need.
 - **Insert into Table**: Add data into a table, with data type checks.
-- **Select from Table**: Retrieve and display data from a table, formatted for easy reading.
-- **Delete from Table**: Remove data from a table.
-- **Update Table**: Modify data in a table, ensuring data types are valid.
-
+- **Select from Table**: Display data in a readable format.
+- **Delete from Table**: Remove specific records.
+- **Update Table**: Edit records with automatic data type checks.
+- 
 ## Features Details:
 - **Column Data Types**
 When creating a table, users are prompted to define column data types (int, string), which are checked during insert and update operations to ensure the data conforms to the correct type.
